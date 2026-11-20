@@ -8,3 +8,7 @@ __pycache__/
 
 venv/
 .venv/
+
+
+# Uploaded personal documents
+uploads/resumes/
