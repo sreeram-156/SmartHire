@@ -1,0 +1,116 @@
+.companies-section {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 75px 0;
+    background: var(--background);
+}
+
+.companies-section .section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.companies-section .section-label {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: #3a86ff;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.companies-section .section-title {
+    margin: 0;
+    font-size: 32px;
+    color: var(--text);
+}
+
+.companies-section .section-description {
+    margin: 9px 0 0;
+    color: var(--muted);
+}
+
+.company-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.company-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+    padding: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: 0.2s ease;
+}
+
+.company-card:hover {
+    transform: translateY(-3px);
+    border-color: #3a86ff;
+}
+
+.company-logo-placeholder {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: #3a86ff;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.company-card h3,
+.company-card p {
+    margin: 0;
+}
+
+.company-card h3 {
+    font-size: 19px;
+    color: var(--text);
+}
+
+.company-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.company-details-button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #3a86ff;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.company-details-button:hover {
+    color: #2563eb;
+}
+
+@media (max-width: 1050px) {
+    .company-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .companies-section .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .company-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,143 @@
+.smart-matching-section {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 75px 0;
+    background: var(--background);
+}
+
+.matching-layout {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.smart-matching-section .section-label {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: #3a86ff;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.smart-matching-section .section-title {
+    margin: 0;
+    font-size: 32px;
+    color: var(--text);
+}
+
+.smart-matching-section .section-description {
+    margin: 9px 0 0;
+    color: var(--muted);
+    max-width: 650px;
+}
+
+.matching-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.matching-points span {
+    padding: 8px 11px;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.match-preview-card {
+    padding: 25px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.match-header h3,
+.match-header p {
+    margin: 3px 0;
+}
+
+.match-header h3 {
+    color: var(--text);
+}
+
+.match-header p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.match-label {
+    color: #3a86ff;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.match-score {
+    color: #16a34a;
+    font-size: 25px;
+}
+
+.match-progress {
+    height: 8px;
+    overflow: hidden;
+    margin: 18px 0;
+    background: var(--surface-alt);
+    border-radius: 20px;
+}
+
+.match-progress span {
+    display: block;
+    width: 92%;
+    height: 100%;
+    background: #16a34a;
+    border-radius: inherit;
+}
+
+.skill-match-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.match-skill {
+    padding: 6px 9px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.match-skill.matched {
+    background: #e9f8ef;
+    color: #15803d;
+}
+
+.match-skill.missing {
+    background: #fff4d6;
+    color: #a16207;
+}
+
+@media (max-width: 800px) {
+    .matching-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .smart-matching-section .section-title {
+        font-size: 28px;
+    }
+}

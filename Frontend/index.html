@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartHire - a modern job discovery and career management platform.">
+    <title>SmartHire | Find Your Next Opportunity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="siteHeader" class="site-header">
+        <div class="header-container">
+
+            <a href="#home" class="brand-logo">
+                <span class="brand-icon">💼</span>
+                <span class="brand-name">SmartHire</span>
+            </a>
+
+            <nav id="mainNavigation" class="main-navigation" aria-label="Main navigation">
+                <a href="#home" class="navigation-link">Home</a>
+                <a href="#jobs" class="navigation-link">Jobs</a>
+                <a href="#companies" class="navigation-link">Companies</a>
+                <a href="#applications" class="navigation-link">Applications</a>
+                <a href="#careerTools" class="navigation-link">Career Tools</a>
+            </nav>
+
+            <div class="header-actions">
+                <button id="notificationButton" class="icon-button" type="button" aria-label="Notifications">🔔</button>
+                <button id="themeToggleButton" class="icon-button" type="button" aria-label="Toggle theme">🌙</button>
+                <button id="loginButton" class="secondary-button" type="button">Login</button>
+                <button id="signupButton" class="primary-button" type="button">Sign Up</button>
+                <button id="mobileMenuButton" class="icon-button mobile-menu-button" type="button"
+                    aria-label="Open menu">☰</button>
+            </div>
+
+        </div>
+    </header>
+
+    <main id="mainContent">
+
+        <section id="home" class="hero-section">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <span class="hero-badge">✨ Smart Job Discovery</span>
+
+                <h1 class="hero-title">Find a Job That Fits You</h1>
+
+                <p class="hero-description">
+                    Discover opportunities based on your skills, experience,
+                    career goals and preferences.
+                </p>
+
+                <form id="jobSearchForm" class="job-search-form">
+                    <div class="search-field">
+                        <label for="jobSearchInput">Job, skill or company</label>
+                        <input id="jobSearchInput" class="search-input" type="text"
+                            placeholder="Python, Data Engineer, Google...">
+                    </div>
+
+                    <div class="search-field">
+                        <label for="locationSearchInput">Location</label>
+                        <input id="locationSearchInput" class="search-input" type="text"
+                            placeholder="Hyderabad, Bangalore, Remote...">
+                    </div>
+
+                    <div class="search-field search-experience-field">
+                        <label for="experienceFilter">Experience</label>
+                        <select id="experienceFilter" class="search-input">
+                            <option value="">Any experience</option>
+                            <option value="Fresher">Fresher</option>
+                            <option value="0-2 Years">0-2 Years</option>
+                            <option value="2-5 Years">2-5 Years</option>
+                        </select>
+                    </div>
+
+                    <button id="searchJobsButton" class="primary-button search-button" type="submit">
+                        🔍 Search Jobs
+                    </button>
+                </form>
+
+                <div class="quick-search-container">
+                    <span class="quick-search-label">Popular:</span>
+                    <button class="quick-search-button" type="button" data-search="Python">Python</button>
+                    <button class="quick-search-button" type="button" data-search="Data Engineer">Data Engineer</button>
+                    <button class="quick-search-button" type="button" data-search="Full Stack">Full Stack</button>
+                    <button class="quick-search-button" type="button" data-search="Remote">Remote</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="jobs" class="content-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">Opportunities</span>
+                    <h2 class="section-title">Recommended Jobs</h2>
+                    <p class="section-description">Explore jobs matched to your current search and preferences.</p>
+                </div>
+
+                <button id="viewAllJobsButton" class="outline-button" type="button">View All Jobs</button>
+            </div>
+
+            <div id="jobResultsContainer" class="job-grid"></div>
+            <p id="jobResultsMessage" class="empty-message hidden"></p>
+        </section>
+
+        <section id="categories" class="content-section alternate-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">Explore</span>
+                    <h2 class="section-title">Popular Job Categories</h2>
+                    <p class="section-description">Start your search by choosing a career area.</p>
+                </div>
+            </div>
+
+            <div id="categoryGrid" class="category-grid">
+                <button class="category-card" type="button" data-category="Software Development">
+                    <span class="category-icon">💻</span>
+                    <strong>Software Development</strong>
+                    <span>1,200+ jobs</span>
+                </button>
+
+                <button class="category-card" type="button" data-category="Frontend">
+                    <span class="category-icon">🎨</span>
+                    <strong>Frontend Development</strong>
+                    <span>1,000+ jobs</span>
+                </button>
+
+                <button class="category-card" type="button" data-category="Backend">
+                    <span class="category-icon">⚙️</span>
+                    <strong>Backend Development</strong>
+                    <span>950+ jobs</span>
+                </button>
+
+                <button class="category-card" type="button" data-category="Data">
+                    <span class="category-icon">📊</span>
+                    <strong>Data & Analytics</strong>
+                    <span>800+ jobs</span>
+                </button>
+
+                <button class="category-card" type="button" data-category="DevOps">
+                    <span class="category-icon">☁️</span>
+                    <strong>Cloud & DevOps</strong>
+                    <span>500+ jobs</span>
+                </button>
+
+                <button class="category-card" type="button" data-category="Design">
+                    <span class="category-icon">🖌️</span>
+                    <strong>UI / UX Design</strong>
+                    <span>700+ jobs</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="companies" class="content-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">Discover</span>
+                    <h2 class="section-title">Top Companies</h2>
+                    <p class="section-description">Explore employers, open positions and company insights.</p>
+                </div>
+
+                <button id="viewAllCompaniesButton" class="outline-button" type="button">Explore Companies</button>
+            </div>
+
+            <div id="companyGrid" class="company-grid">
+                <article class="company-card">
+                    <div class="company-logo-placeholder">A</div>
+                    <div>
+                        <h3>Accenture</h3>
+                        <p>Technology · 700+ jobs</p>
+                    </div>
+                    <button class="text-button company-details-button" type="button" data-company="Accenture">View
+                        Company</button>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-logo-placeholder">C</div>
+                    <div>
+                        <h3>Capgemini</h3>
+                        <p>Technology · 650+ jobs</p>
+                    </div>
+                    <button class="text-button company-details-button" type="button" data-company="Capgemini">View
+                        Company</button>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-logo-placeholder">M</div>
+                    <div>
+                        <h3>Microsoft</h3>
+                        <p>Technology · 100+ jobs</p>
+                    </div>
+                    <button class="text-button company-details-button" type="button" data-company="Microsoft">View
+                        Company</button>
+                </article>
+
+                <article class="company-card">
+                    <div class="company-logo-placeholder">G</div>
+                    <div>
+                        <h3>Google</h3>
+                        <p>Technology · 150+ jobs</p>
+                    </div>
+                    <button class="text-button company-details-button" type="button" data-company="Google">View
+                        Company</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="applications" class="content-section alternate-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">Track Progress</span>
+                    <h2 class="section-title">Application Dashboard</h2>
+                    <p class="section-description">Keep your job search organized from application to interview.</p>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <article class="dashboard-stat">
+                    <span class="dashboard-icon">📨</span>
+                    <strong id="appliedCount">0</strong>
+                    <span>Applied</span>
+                </article>
+
+                <article class="dashboard-stat">
+                    <span class="dashboard-icon">🔎</span>
+                    <strong id="reviewCount">0</strong>
+                    <span>Under Review</span>
+                </article>
+
+                <article class="dashboard-stat">
+                    <span class="dashboard-icon">🎤</span>
+                    <strong id="interviewCount">0</strong>
+                    <span>Interviews</span>
+                </article>
+
+                <article class="dashboard-stat">
+                    <span class="dashboard-icon">❤️</span>
+                    <strong id="savedCount">0</strong>
+                    <span>Saved Jobs</span>
+                </article>
+            </div>
+
+            <div id="applicationList" class="application-list">
+                <div class="empty-state">
+                    <span class="empty-state-icon">📋</span>
+                    <h3>No applications yet</h3>
+                    <p>Apply to a job and your application will appear here.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="applications" class="content-section alternate-section">
+
+    <!-- existing Applications content -->
+
+</section>
+
+
+
+<!-- ADD USER PROFILE HERE -->
+
+<section id="userProfilePage" class="content-section alternate-section hidden">
+
+    <button id="backToSmartHireButton" class="secondary-button" type="button">
+        ← Back to SmartHire
+    </button>
+
+    <div class="section-heading">
+        <div>
+            <span class="section-label">My Account</span>
+            <h2 class="section-title">My Profile</h2>
+            <p class="section-description">
+                Complete your profile to improve your SmartHire experience.
+            </p>
+        </div>
+    </div>
+
+    <div class="user-profile-layout">
+
+        <!-- Profile Summary -->
+
+        <div class="user-profile-summary">
+
+            <div id="userProfileAvatar" class="profile-avatar">
+                U
+            </div>
+
+            <h3 id="userProfileDisplayName">
+                User Name
+            </h3>
+
+            <p id="userProfileDisplayEmail">
+                user@example.com
+            </p>
+
+            <div class="profile-completion-card">
+
+                <div class="progress-header">
+                    <span>Profile Completion</span>
+                    <strong id="profileCompletionPercentage">0%</strong>
+                </div>
+
+                <div class="progress-track">
+                    <span id="profileCompletionBar" style="width:0%"></span>
+                </div>
+
+                <p id="profileCompletionMessage">
+                    Complete your profile to get started.
+                </p>
+
+            </div>
+            <button
+                id="userProfileLogoutButton"
+                class="secondary-button full-width-button"
+                type="button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+        <!-- Profile Details -->
+        <div class="user-profile-details">
+
+            <form id="userProfileForm" class="modal-form">
+
+                <label for="userProfileName">Full Name</label>
+                <input
+                    id="userProfileName"
+                    class="form-input"
+                    type="text"
+                    required
+                >
+
+                <label for="userProfileEmail">Email</label>
+                <input
+                    id="userProfileEmail"
+                    class="form-input"
+                    type="email"
+                    readonly
+                >
+
+                <label for="userProfilePhone">Phone Number</label>
+                <input
+                    id="userProfilePhone"
+                    class="form-input"
+                    type="tel"
+                    placeholder="Enter phone number"
+                >
+
+                <label for="userProfileLocation">Location</label>
+                <input
+                    id="userProfileLocation"
+                    class="form-input"
+                    type="text"
+                    placeholder="Hyderabad, Bangalore..."
+                >
+
+                <label for="userProfileEducation">Education</label>
+                <input
+                    id="userProfileEducation"
+                    class="form-input"
+                    type="text"
+                    placeholder="B.Tech, MCA, B.Sc..."
+                >
+
+                <label for="userProfileExperience">Experience</label>
+                <input
+                    id="userProfileExperience"
+                    class="form-input"
+                    type="text"
+                    placeholder="Fresher, 1 year, 2 years..."
+                >
+
+                <label for="userProfileSkills">Skills</label>
+                <input
+                    id="userProfileSkills"
+                    class="form-input"
+                    type="text"
+                    placeholder="Python, FastAPI, MySQL..."
+                >
+
+                <label for="userProfileBio">About Me</label>
+                <textarea
+                    id="userProfileBio"
+                    class="form-input textarea-input"
+                    placeholder="Write a short profile summary..."
+                ></textarea>
+
+                <button
+                    id="saveUserProfileButton"
+                    class="primary-button full-width-button"
+                    type="submit"
+                >
+                    Save Profile
+                </button>
+
+                <p id="userProfileMessage" class="form-message"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <section id="savedJobs" class="content-section alternate-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">Your Jobs</span>
+                    <h2 class="section-title">Saved Jobs</h2>
+                    <p class="section-description">Keep interesting opportunities ready for later.</p>
+                </div>
+            </div>
+
+            <div id="savedJobsContainer" class="saved-jobs-container">
+                <div class="empty-state">
+                    <span class="empty-state-icon">❤️</span>
+                    <h3>No saved jobs</h3>
+                    <p>Use Save Job on any listing to keep it here.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="careerTools" class="content-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">Career Growth</span>
+                    <h2 class="section-title">Career Tools</h2>
+                    <p class="section-description">Tools to help you prepare, apply and improve.</p>
+                </div>
+            </div>
+
+            <div class="career-tools-grid">
+                <article class="career-tool-card">
+                    <span class="tool-icon">📄</span>
+                    <h3>Resume Builder</h3>
+                    <p>Create a structured resume for your target role.</p>
+                    <button class="outline-button career-tool-button" type="button">Explore</button>
+                </article>
+
+                <article class="career-tool-card">
+                    <span class="tool-icon">🎯</span>
+                    <h3>ATS Resume Checker</h3>
+                    <p>Compare your resume against a job description.</p>
+                    <button class="outline-button career-tool-button" type="button">Check Resume</button>
+                </article>
+
+                <article class="career-tool-card">
+                    <span class="tool-icon">🧩</span>
+                    <h3>Skill Gap Analyzer</h3>
+                    <p>Find skills you may need for your target roles.</p>
+                    <button class="outline-button career-tool-button" type="button">Analyze Skills</button>
+                </article>
+
+                <article class="career-tool-card">
+                    <span class="tool-icon">🎤</span>
+                    <h3>Interview Prep</h3>
+                    <p>Practice technical and role-specific interview questions.</p>
+                    <button class="outline-button career-tool-button" type="button">Start Practice</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="smartMatching" class="content-section alternate-section">
+            <div class="matching-layout">
+                <div>
+                    <span class="section-label">SmartHire Intelligence</span>
+                    <h2 class="section-title">Understand Why a Job Matches You</h2>
+                    <p class="section-description">
+                        SmartHire can explain matching factors instead of showing
+                        a score without context.
+                    </p>
+
+                    <div class="matching-points">
+                        <span>✓ Skills</span>
+                        <span>✓ Location</span>
+                        <span>✓ Experience</span>
+                        <span>✓ Salary preference</span>
+                        <span>✓ Work mode</span>
+                    </div>
+                </div>
+
+                <div class="match-preview-card">
+                    <div class="match-header">
+                        <div>
+                            <span class="match-label">Example Match</span>
+                            <h3>Python Developer</h3>
+                            <p>Accenture · Hyderabad</p>
+                        </div>
+                        <strong class="match-score">92%</strong>
+                    </div>
+
+                    <div class="match-progress">
+                        <span></span>
+                    </div>
+
+                    <div class="skill-match-list">
+                        <span class="match-skill matched">Python ✓</span>
+                        <span class="match-skill matched">SQL ✓</span>
+                        <span class="match-skill matched">FastAPI ✓</span>
+                        <span class="match-skill missing">AWS △</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="notifications" class="content-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">Updates</span>
+                    <h2 class="section-title">Notifications</h2>
+                    <p class="section-description">Important updates from your job search.</p>
+                </div>
+            </div>
+
+            <div id="notificationList" class="notification-list">
+                <article class="notification-item">
+                    <span class="notification-dot"></span>
+                    <div>
+                        <strong>Welcome to SmartHire</strong>
+                        <p>Complete your profile to improve job recommendations.</p>
+                    </div>
+                    <small>New</small>
+                </article>
+
+                <article class="notification-item">
+                    <span class="notification-dot"></span>
+                    <div>
+                        <strong>Job alerts are ready</strong>
+                        <p>Create an alert to receive matching opportunities.</p>
+                    </div>
+                    <small>Tip</small>
+                </article>
+            </div>
+        </section>
+
+        <section id="whySmartHire" class="content-section">
+            <div class="section-heading centered-heading">
+                <span class="section-label">Why SmartHire</span>
+                <h2 class="section-title">More Than a Job Listing Website</h2>
+                <p class="section-description">
+                    Search, understand, apply, track and improve your career journey in one place.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <article class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Smart Matching</h3>
+                    <p>Understand how your skills and preferences match each opportunity.</p>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-icon">📌</span>
+                    <h3>Application Tracking</h3>
+                    <p>Keep applications, interviews and saved jobs organized.</p>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-icon">🛡️</span>
+                    <h3>Job Verification</h3>
+                    <p>Show verification information to help users evaluate listings.</p>
+                </article>
+
+                <article class="feature-card">
+                    <span class="feature-icon">🚀</span>
+                    <h3>Career Growth</h3>
+                    <p>Use resume, skill and interview tools to prepare for your next role.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="recruiterDashboard" class="content-section alternate-section hidden">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">Recruiter Portal</span>
+                    <h2 class="section-title">Recruiter Dashboard</h2>
+                    <p class="section-description">
+                        Manage your jobs, applicants and recruitment activities.
+                    </p>
+                </div>
+
+                <button id="postNewJobButton" class="primary-button" type="button">
+                    + Post New Job
+                </button>
+            </div>
+
+            <div class="recruiter-profile-card">
+
+                <div class="recruiter-profile-info">
+
+                    <div id="recruiterDashboardAvatar" class="profile-avatar">
+                        R
+                    </div>
+
+                    <div>
+                        <h3 id="recruiterDashboardName">
+                            Recruiter Name
+                        </h3>
+
+                        <p id="recruiterDashboardCompany">
+                            Company Name
+                        </p>
+
+                        <span id="recruiterDashboardEmail">
+                            recruiter@example.com
+                        </span>
+                    </div>
+
+                </div>
+
+                <button id="recruiterProfileButton" class="outline-button" type="button">
+                    Manage Profile
+                </button>
+
+                <button id="recruiterLogoutButton" class="danger-button" type="button">
+                    Logout
+                </button>
+
+            </div>
+
+            <div class="dashboard-grid recruiter-stats-grid">
+
+                <article class="dashboard-stat">
+                    <span class="dashboard-icon">💼</span>
+                    <strong id="recruiterTotalJobs">0</strong>
+                    <span>Total Jobs</span>
+                </article>
+
+                <article class="dashboard-stat">
+                    <span class="dashboard-icon">🟢</span>
+                    <strong id="recruiterActiveJobs">0</strong>
+                    <span>Active Jobs</span>
+                </article>
+
+                <article class="dashboard-stat">
+                    <span class="dashboard-icon">👥</span>
+                    <strong id="recruiterTotalApplicants">0</strong>
+                    <span>Total Applicants</span>
+                </article>
+
+                <article class="dashboard-stat">
+                    <span class="dashboard-icon">⏳</span>
+                    <strong id="recruiterPendingApplications">0</strong>
+                    <span>Pending Applications</span>
+                </article>
+
+            </div>
+
+            <div class="section-heading recruiter-sub-heading">
+
+                <div>
+                    <span class="section-label">Job Management</span>
+                    <h2 class="section-title">
+                        My Jobs
+                    </h2>
+                    <p class="section-description">
+                        Manage the jobs posted by your company.
+                    </p>
+                </div>
+
+                <button id="viewAllRecruiterJobsButton" class="outline-button" type="button">View All
+                </button>
+            </div>
+
+            <div id="recruiterJobsContainer" class="job-grid"></div>
+
+            <div class="section-heading recruiter-sub-heading">
+
+                <div>
+                    <span class="section-label">Applications</span>
+                    <h2 class="section-title">
+                        Recent Applicants
+                    </h2>
+                    <p class="section-description">
+                        Review candidates who recently applied to your jobs.
+                    </p>
+                </div>
+
+                <button id="viewAllApplicantsButton" class="outline-button" type="button">View All Applicants
+                </button>
+
+            </div>
+
+
+            <div id="recentApplicantsContainer" class="application-list"></div>
+
+
+        </section>
+        <!-- ==================== ADMIN LOGIN MODAL ==================== -->
+
+        <div id="adminLoginModal" class="modal hidden">
+            <div class="modal-header">
+                <div class="modal-icon">🛡️</div>
+                <h2>Admin Login</h2>
+                <p>Login to manage SmartHire</p>
+            </div>
+
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="adminLoginEmail">Email</label>
+                    <input type="email" id="adminLoginEmail" class="form-input" placeholder="Enter admin email"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="adminLoginPassword">Password</label>
+                    <input type="password" id="adminLoginPassword" class="form-input" placeholder="Enter admin password"
+                        required>
+                </div>
+
+                <p id="adminLoginMessage"></p>
+
+                <button type="submit" class="primary-button full-width-button">
+                    Login as Admin
+                </button>
+            </form>
+
+            <button type="button" class="modal-close-button" data-close-modal="adminLoginModal">
+                ✕
+            </button>
+        </div>
+
+
+        <!-- ==================== ADMIN DASHBOARD ==================== -->
+
+        <section id="adminDashboard" class="admin-dashboard hidden">
+
+            <div class="admin-dashboard-header">
+
+                <div class="admin-dashboard-heading">
+                    <div id="adminDashboardAvatar" class="admin-dashboard-avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <h2>
+                            Welcome, <span id="adminDashboardName">Admin</span>
+                        </h2>
+
+                        <p>
+                            Manage users, recruiters, jobs and approvals.
+                        </p>
+                    </div>
+                </div>
+
+                <button id="adminLogoutButton" type="button" class="danger-button">
+                    Logout
+                </button>
+
+            </div>
+
+
+            <!-- ==================== ADMIN STATISTICS ==================== -->
+
+            <div class="admin-statistics-grid">
+
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon">👤</div>
+
+                    <div>
+                        <span class="admin-stat-label">
+                            Total Users
+                        </span>
+
+                        <strong id="adminTotalUsers">
+                            0
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon">🏢</div>
+
+                    <div>
+                        <span class="admin-stat-label">
+                            Total Recruiters
+                        </span>
+
+                        <strong id="adminTotalRecruiters">
+                            0
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon">💼</div>
+
+                    <div>
+                        <span class="admin-stat-label">
+                            Total Jobs
+                        </span>
+
+                        <strong id="adminTotalJobs">
+                            0
+                        </strong>
+                    </div>
+                </div>
+
+
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon">⏳</div>
+
+                    <div>
+                        <span class="admin-stat-label">
+                            Pending Approvals
+                        </span>
+
+                        <strong id="adminPendingApprovals">
+                            0
+                        </strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ==================== USER MANAGEMENT ==================== -->
+
+            <section class="admin-management-section">
+
+                <div class="admin-section-header">
+                    <div>
+                        <h3>User Management</h3>
+                        <p>
+                            View and manage registered job seekers.
+                        </p>
+                    </div>
+
+                    <div class="admin-search-box">
+                        <input type="text" id="adminUserSearchInput" class="form-input" placeholder="Search users...">
+                    </div>
+                </div>
+
+                <div id="adminUsersContainer" class="admin-users-container">
+                </div>
+
+            </section>
+
+
+            <!-- ==================== RECRUITER MANAGEMENT ==================== -->
+
+            <section class="admin-management-section">
+
+                <div class="admin-section-header">
+                    <div>
+                        <h3>Recruiter Management</h3>
+                        <p>
+                            Review and manage recruiter accounts.
+                        </p>
+                    </div>
+
+                    <div class="admin-search-box">
+                        <input type="text" id="adminRecruiterSearchInput" class="form-input"
+                            placeholder="Search recruiters...">
+                    </div>
+                </div>
+
+                <div id="adminRecruitersContainer" class="admin-recruiters-container">
+                </div>
+
+            </section>
+
+
+            <!-- ==================== JOB MANAGEMENT ==================== -->
+
+            <section class="admin-management-section">
+
+                <div class="admin-section-header">
+                    <div>
+                        <h3>Job Management</h3>
+                        <p>
+                            Review, approve and manage job postings.
+                        </p>
+                    </div>
+
+                    <div class="admin-search-box">
+                        <input type="text" id="adminJobSearchInput" class="form-input" placeholder="Search jobs...">
+                    </div>
+                </div>
+
+
+                <div class="admin-job-filter-row">
+
+                    <select id="adminJobStatusFilter" class="form-input">
+
+                        <option value="">
+                            All Jobs
+                        </option>
+
+                        <option value="Pending">
+                            Pending Approval
+                        </option>
+
+                        <option value="Approved">
+                            Approved
+                        </option>
+
+                        <option value="Rejected">
+                            Rejected
+                        </option>
+
+                        <option value="Closed">
+                            Closed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div id="adminJobsContainer" class="admin-jobs-container">
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- ==================== RECRUITER REVIEW MODAL ==================== -->
+
+        <div id="adminRecruiterReviewModal" class="modal hidden">
+
+            <div class="modal-header">
+                <div class="modal-icon">🏢</div>
+
+                <h2 id="adminRecruiterReviewTitle">
+                    Recruiter Review
+                </h2>
+
+                <p>
+                    Review recruiter account details.
+                </p>
+            </div>
+
+            <div id="adminRecruiterReviewContent" class="admin-review-content">
+            </div>
+
+            <div class="admin-review-actions">
+
+                <button id="adminApproveRecruiterButton" type="button" class="primary-button">
+                    Approve
+                </button>
+
+                <button id="adminRejectRecruiterButton" type="button" class="danger-button">
+                    Reject
+                </button>
+
+            </div>
+
+            <button type="button" class="modal-close-button" data-close-modal="adminRecruiterReviewModal">
+                ✕
+            </button>
+
+        </div>
+
+
+        <!-- ==================== JOB REVIEW MODAL ==================== -->
+
+        <div id="adminJobReviewModal" class="modal hidden">
+
+            <div class="modal-header">
+                <div class="modal-icon">💼</div>
+
+                <h2 id="adminJobReviewTitle">
+                    Job Review
+                </h2>
+
+                <p>
+                    Review this job before publishing it.
+                </p>
+            </div>
+
+            <div id="adminJobReviewContent" class="admin-review-content">
+            </div>
+
+            <div class="admin-review-actions">
+
+                <button id="adminApproveJobButton" type="button" class="primary-button">
+                    Approve Job
+                </button>
+
+                <button id="adminRejectJobButton" type="button" class="danger-button">
+                    Reject Job
+                </button>
+
+            </div>
+
+            <button type="button" class="modal-close-button" data-close-modal="adminJobReviewModal">
+                ✕
+            </button>
+
+        </div>
+
+
+        <!-- ==================== DELETE CONFIRMATION MODAL ==================== -->
+
+        <div id="adminDeleteConfirmModal" class="modal hidden">
+
+            <div class="modal-header">
+                <div class="modal-icon">⚠️</div>
+
+                <h2 id="adminDeleteConfirmTitle">
+                    Confirm Delete
+                </h2>
+
+                <p id="adminDeleteConfirmMessage">
+                    Are you sure you want to delete this item?
+                </p>
+            </div>
+
+            <div class="admin-review-actions">
+
+                <button id="adminConfirmDeleteButton" type="button" class="danger-button">
+                    Delete
+                </button>
+
+                <button type="button" class="outline-button" data-close-modal="adminDeleteConfirmModal">
+                    Cancel
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer id="siteFooter" class="site-footer">
+        <div class="footer-container">
+            <div>
+                <a href="#home" class="brand-logo footer-brand">
+                    <span class="brand-icon">💼</span>
+                    <span class="brand-name">SmartHire</span>
+                </a>
+                <p>Smart job discovery and career management.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#jobs">Jobs</a>
+                <a href="#companies">Companies</a>
+                <a href="#careerTools">Career Tools</a>
+                <a href="#alerts">Job Alerts</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 SmartHire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="modalOverlay" class="modal-overlay hidden"></div>
+
+    <div id="loginModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle">
+        <button class="modal-close-button" type="button" data-close-modal="loginModal">×</button>
+
+        <div class="modal-header">
+            <span class="modal-icon">🔐</span>
+            <h2 id="loginModalTitle">Welcome Back</h2>
+            <p>Sign in to continue your SmartHire journey.</p>
+        </div>
+
+        <form id="loginForm" class="modal-form">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" class="form-input" type="email" placeholder="Enter your email" required>
+
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" class="form-input" type="password" placeholder="Enter your password" required>
+
+            <button class="primary-button full-width-button" type="submit">Login</button>
+            <p id="loginMessage" class="form-message"></p>
+        </form>
+
+        <button id="switchToSignupButton" class="modal-switch-button" type="button">
+            New to SmartHire? Create an account
+        </button>
+    </div>
+
+    <div id="signupModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="signupModalTitle">
+        <button class="modal-close-button" type="button" data-close-modal="signupModal">×</button>
+
+        <div class="modal-header">
+            <span class="modal-icon">✨</span>
+            <h2 id="signupModalTitle">Create Your Account</h2>
+            <p>Build your profile and discover better opportunities.</p>
+        </div>
+
+        <form id="signupForm" class="modal-form">
+            <label for="signupName">Full Name</label>
+            <input id="signupName" class="form-input" type="text" placeholder="Enter your full name"
+                pattern="[A-Za-z]+([ '-][A-Za-z]+)*"
+                title="Name should contain only letters, spaces, hyphens or apostrophes." required>
+
+            <label for="signupEmail">Email</label>
+            <input id="signupEmail" class="form-input" type="email" placeholder="Enter your email" required>
+
+            <label for="signupPassword">Password</label>
+            <input id="signupPassword" class="form-input" type="password" placeholder="Create a password" minlength="8"
+                required>
+
+            <label for="signupConfirmPassword">Confirm Password</label>
+            <input id="signupConfirmPassword" class="form-input" type="password" placeholder="Confirm your password"
+                minlength="8" required>
+
+            <button class="primary-button full-width-button" type="submit">Create Account</button>
+            <p id="signupMessage" class="form-message"></p>
+        </form>
+
+        <button id="switchToLoginButton" class="modal-switch-button" type="button">
+            Already have an account? Login
+        </button>
+
+        <button id="recruiterSignupButton" class="modal-switch-button" type="button">Are you a recruiter? Create a
+            recruiter account</button>
+
+    </div>
+
+    <div id="recruiterSignupModal" class="modal hidden" role="dialog" aria-modal="true"
+        aria-labelledby="recruiterSignupModalTitle">
+        <button id="closeRecruiterSignupModal" class="modal-close-button" type="button"
+            aria-label="Close recruiter signup">
+            ×
+        </button>
+        <div class="modal-header">
+            <div class="modal-icon">👔</div>
+            <h2 id="recruiterSignupModalTitle">Recruiter Signup</h2>
+            <p>Create an account to post jobs and manage applicants.</p>
+        </div>
+        <form id="recruiterSignupForm" class="modal-form">
+            <div class="form-group">
+                <label for="recruiterName">Name</label>
+                <input type="text" id="recruiterName" name="name" class="form-input" placeholder="Enter your name"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="recruiterEmail">Email</label>
+                <input type="email" id="recruiterEmail" name="email" class="form-input" placeholder="Enter your email"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="recruiterCompany">Company</label>
+                <input type="text" id="recruiterCompany" name="company" class="form-input"
+                    placeholder="Enter your company name" required>
+            </div>
+            <div class="form-group">
+                <label for="recruiterPassword">Password</label>
+                <input type="password" id="recruiterPassword" class="form-input" name="password" minlength="8"
+                    placeholder="Enter password" required>
+            </div>
+            <div class="form-group">
+                <label for="recruiterConfirmPassword">Confirm Password</label>
+                <input type="password" id="recruiterConfirmPassword" name="confirmPassword" class="form-input"
+                    placeholder="Confirm your password" minlength="8" required>
+            </div>
+            <button type="submit" id="recruiterSignupSubmitButton" class="primary-button full-width-button">Create
+                Recruiter Account</button>
+            <p id="recruiterSignupMessage" class="form-message"></p>
+        </form>
+
+    </div>
+
+    <div id="recruiterProfileModal" class="modal hidden" role="dialog" aria-modal="true"
+        aria-labelledby="recruiterProfileModalTitle">
+
+        <button class="modal-close-button" type="button" data-close-modal="recruiterProfileModal"
+            aria-label="Close recruiter profile">
+            ×
+        </button>
+
+        <div class="modal-header">
+            <div class="modal-icon">👔</div>
+
+            <h2 id="recruiterProfileModalTitle">
+                Manage Recruiter Profile
+            </h2>
+
+            <p>
+                Update your recruiter account information.
+            </p>
+        </div>
+
+        <form id="recruiterProfileForm" class="modal-form">
+
+            <div class="form-group">
+                <label for="recruiterProfileName">
+                    Name
+                </label>
+
+                <input type="text" id="recruiterProfileName" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label for="recruiterProfileEmail">
+                    Email
+                </label>
+
+                <input type="email" id="recruiterProfileEmail" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label for="recruiterProfileCompany">
+                    Company
+                </label>
+
+                <input type="text" id="recruiterProfileCompany" class="form-input" required>
+            </div>
+
+            <button type="submit" class="primary-button full-width-button">
+                Save Changes
+            </button>
+
+            <p id="recruiterProfileMessage" class="form-message">
+            </p>
+
+        </form>
+    </div>
+
+    <div id="postJobModal" class="modal modal-large hidden" role="dialog" aria-modal="true"
+        aria-labelledby="postJobModalTitle">
+
+        <button class="modal-close-button" type="button" data-close-modal="postJobModal">×
+        </button>
+
+        <div class="modal-header">
+
+            <span class="modal-icon">💼</span>
+
+            <h2 id="postJobModalTitle">
+                Post a New Job
+            </h2>
+            <p>
+                Create a job listing and start receiving applications.
+            </p>
+
+        </div>
+
+        <form id="postJobForm" class="modal-form">
+
+            <label for="jobTitleInput">
+                Job Title
+            </label>
+
+            <input id="jobTitleInput" class="form-input" type="text" placeholder="e.g. Python Developer" required>
+
+            <label for="jobCompanyInput">
+                Company
+            </label>
+
+            <input id="jobCompanyInput" class="form-input" type="text" placeholder="Company name" required>
+
+            <label for="jobLocationInput">
+                Location
+            </label>
+
+            <input id="jobLocationInput" class="form-input" type="text" placeholder="Hyderabad / Remote" required>
+
+            <label for="jobExperienceInput">
+                Experience
+            </label>
+
+            <select id="jobExperienceInput" class="form-input" required>
+
+                <option value="">
+                    Select experience
+                </option>
+
+                <option value="Fresher">
+                    Fresher
+                </option>
+
+                <option value="0-2 Years">
+                    0-2 Years
+                </option>
+
+                <option value="2-5 Years">
+                    2-5 Years
+                </option>
+
+                <option value="5+ Years">
+                    5+ Years
+                </option>
+
+            </select>
+
+            <label for="jobTypeInput">
+                Job Type
+            </label>
+
+            <select id="jobTypeInput" class="form-input" required>
+
+                <option value="">
+                    Select job type
+                </option>
+
+                <option value="Full Time">
+                    Full Time
+                </option>
+
+                <option value="Part Time">
+                    Part Time
+                </option>
+
+                <option value="Internship">
+                    Internship
+                </option>
+
+                <option value="Contract">
+                    Contract
+                </option>
+
+            </select>
+
+
+            <label for="jobWorkModeInput">
+                Work Mode
+            </label>
+
+            <select id="jobWorkModeInput" class="form-input" required>
+
+                <option value="">
+                    Select work mode
+                </option>
+
+                <option value="On-site">
+                    On-site
+                </option>
+
+                <option value="Hybrid">
+                    Hybrid
+                </option>
+
+                <option value="Remote">
+                    Remote
+                </option>
+
+            </select>
+
+            <label for="jobSalaryInput">
+                Salary
+            </label>
+
+            <input id="jobSalaryInput" class="form-input" type="text" placeholder="e.g. ₹6 - ₹10 LPA" required>
+
+            <label for="jobSkillsInput">
+                Required Skills
+            </label>
+
+            <input id="jobSkillsInput" class="form-input" type="text" placeholder="Python, FastAPI, SQL" required>
+
+            <label for="jobDescriptionInput">
+                Job Description
+            </label>
+
+            <textarea id="jobDescriptionInput" class="form-input textarea-input"
+                placeholder="Describe the job responsibilities, requirements and qualifications..." rows="6"
+                required></textarea>
+
+
+            <button id="postJobSubmitButton" class="primary-button full-width-button" type="submit">
+                Post Job
+            </button>
+
+            <p id="postJobMessage" class="form-message">
+            </p>
+
+        </form>
+    </div>
+
+
+    <div id="jobApplicantsModal" class="modal modal-large hidden" role="dialog" aria-modal="true"
+        aria-labelledby="jobApplicantsModalTitle">
+
+        <button class="modal-close-button" type="button" data-close-modal="jobApplicantsModal">
+            ×
+        </button>
+
+        <div class="modal-header">
+            <span class="modal-icon">👥</span>
+
+            <h2 id="jobApplicantsModalTitle">
+                Job Applicants
+            </h2>
+
+            <p id="jobApplicantsModalDescription">
+                Review applicants for this job.
+            </p>
+        </div>
+
+        <div id="jobApplicantsContainer" class="application-list">
+        </div>
+    </div>
+
+    <div id="editJobModal" class="modal modal-large hidden" role="dialog" aria-modal="true"
+        aria-labelledby="editJobModalTitle">
+
+        <button class="modal-close-button" type="button" data-close-modal="editJobModal">
+            ×
+        </button>
+
+        <div class="modal-header">
+            <span class="modal-icon">✏️</span>
+
+            <h2 id="editJobModalTitle">
+                Edit Job
+            </h2>
+
+            <p>
+                Update your job listing details.
+            </p>
+        </div>
+
+        <form id="editJobForm" class="modal-form">
+
+            <label for="editJobTitleInput">
+                Job Title
+            </label>
+
+            <input id="editJobTitleInput" class="form-input" type="text" required>
+            <label for="editJobCompanyInput">
+                Company
+            </label>
+
+            <input id="editJobCompanyInput" class="form-input" type="text" required>
+
+            <label for="editJobLocationInput">
+                Location
+            </label>
+
+            <input id="editJobLocationInput" class="form-input" type="text" required>
+            <label for="editJobExperienceInput">
+                Experience
+            </label>
+
+            <select id="editJobExperienceInput" class="form-input" required>
+                <option value="">Select experience</option>
+                <option value="Fresher">Fresher</option>
+                <option value="0-2 Years">0-2 Years</option>
+                <option value="2-5 Years">2-5 Years</option>
+                <option value="5+ Years">5+ Years</option>
+            </select>
+
+            <label for="editJobTypeInput">
+                Job Type
+            </label>
+
+            <select id="editJobTypeInput" class="form-input" required>
+                <option value="">Select job type</option>
+                <option value="Full Time">Full Time</option>
+                <option value="Part Time">Part Time</option>
+                <option value="Internship">Internship</option>
+                <option value="Contract">Contract</option>
+            </select>
+
+            <label for="editJobWorkModeInput">
+                Work Mode
+            </label>
+
+            <select id="editJobWorkModeInput" class="form-input" required>
+                <option value="">Select work mode</option>
+                <option value="On-site">On-site</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Remote">Remote</option>
+            </select>
+
+
+            <label for="editJobSalaryInput">
+                Salary
+            </label>
+
+            <input id="editJobSalaryInput" class="form-input" type="text" required>
+
+            <label for="editJobSkillsInput">
+                Required Skills
+            </label>
+
+            <input id="editJobSkillsInput" class="form-input" type="text" required>
+
+            <label for="editJobDescriptionInput">
+                Job Description
+            </label>
+
+            <textarea id="editJobDescriptionInput" class="form-input textarea-input" rows="6" required></textarea>
+
+            <button id="editJobSubmitButton" class="primary-button full-width-button" type="submit">
+                Save Changes
+            </button>
+
+            <p id="editJobMessage" class="form-message">
+            </p>
+
+        </form>
+    </div>
+
+    <div id="jobDetailsModal" class="modal modal-large hidden" role="dialog" aria-modal="true"
+        aria-labelledby="jobDetailsTitle">
+        <button class="modal-close-button" type="button" data-close-modal="jobDetailsModal">×</button>
+        <div id="jobDetailsContent"></div>
+    </div>
+
+    <div id="applyModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="applyModalTitle">
+        <button class="modal-close-button" type="button" data-close-modal="applyModal">×</button>
+
+        <div class="modal-header">
+            <span class="modal-icon">📨</span>
+            <h2 id="applyModalTitle">Apply for Job</h2>
+            <p>Submit your application using your SmartHire profile.</p>
+        </div>
+
+        <form id="applyForm" class="modal-form">
+            <input id="applyJobId" type="hidden">
+
+            <label for="applyResume">Resume</label>
+            <input id="applyResume" class="form-input" type="file" accept=".pdf,.doc,.docx" required>
+
+            <label for="coverLetter">Cover Letter</label>
+            <textarea id="coverLetter" class="form-input textarea-input"
+                placeholder="Write a short cover letter..."></textarea>
+
+            <button class="primary-button full-width-button" type="submit">Submit Application</button>
+            <p id="applyMessage" class="form-message"></p>
+        </form>
+    </div>
+
+
+
+    <div id="profileModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+        <button class="modal-close-button" type="button" data-close-modal="profileModal">×</button>
+
+        <div class="modal-header">
+            <span class="modal-icon">👤</span>
+            <h2 id="profileModalTitle">My Profile</h2>
+            <p>Manage your SmartHire profile.</p>
+        </div>
+
+        <div class="profile-summary">
+            <div class="profile-avatar" id="profileAvatar">S</div>
+            <div>
+                <h3 id="profileName">Guest User</h3>
+                <p id="profileEmail">Not logged in</p>
+            </div>
+        </div>
+
+        <div class="profile-progress">
+            <div class="progress-header">
+                <span>Profile completion</span>
+                <strong id="profileModalCompletion">0%</strong>
+            </div>
+
+            <div class="progress-track">
+                <span id="profileModalCompletionBar" style="width:0%"></span>
+            </div>
+        </div>
+
+        <button id="logoutButton" class="danger-button full-width-button" type="button">Logout</button>
+    </div>
+
+    <div id="notificationPanel" class="notification-panel hidden">
+        <div class="panel-header">
+            <h3>Notifications</h3>
+            <button id="closeNotificationPanel" class="icon-button" type="button">×</button>
+        </div>
+
+        <div class="panel-notification">
+            <strong>Welcome to SmartHire</strong>
+            <p>Complete your profile to get better recommendations.</p>
+        </div>
+
+        <div class="panel-notification">
+            <strong>Create your first job alert</strong>
+            <p>Receive updates for jobs matching your preferences.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

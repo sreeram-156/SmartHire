@@ -1,0 +1,117 @@
+#root {
+    min-height: 100vh;
+}
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.modal-container {
+    position: relative;
+
+    width: min(450px, 100%);
+    padding: 32px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+}
+
+.modal-container h2 {
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.modal-container > p {
+    margin-bottom: 24px;
+    color: var(--muted);
+}
+
+.modal-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.modal-container .form-input {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    outline: none;
+}
+
+.modal-container .form-input:focus {
+    border-color: #3a86ff;
+}
+
+.modal-container .form-input::placeholder {
+    color: var(--muted);
+}
+
+.modal-container form .primary-button {
+    width: 100%;
+    margin-top: 4px;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    border: none;
+    background: transparent;
+
+    color: var(--muted);
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.modal-close-button:hover {
+    color: var(--text);
+}
+
+.modal-switch-button {
+    display: block;
+
+    width: 100%;
+    margin-top: 20px;
+
+    border: none;
+    background: transparent;
+
+    color: #3a86ff;
+
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.modal-switch-button:hover {
+    text-decoration: underline;
+}
+
+.form-message {
+    margin-top: 14px;
+    color: #3a86ff;
+    font-size: 14px;
+    text-align: center;
+}

@@ -1,0 +1,243 @@
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-container {
+    width: min(1200px, 92%);
+    min-height: 76px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.brand-icon {
+    font-size: 25px;
+}
+
+.brand-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: #3a86ff;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navigation-link {
+    text-decoration: none;
+    color: var(--muted);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.navigation-link:hover {
+    color: #3a86ff;
+}
+
+/* =========================
+   HEADER ACTIONS
+========================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-button,
+.secondary-button,
+.icon-button {
+    border: 0;
+    border-radius: 9px;
+
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+/* Primary Button */
+
+.primary-button {
+    padding: 10px 16px;
+
+    background: #3a86ff;
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+.primary-button:hover {
+    background: #2563eb;
+}
+
+/* Secondary Button */
+
+.secondary-button {
+    padding: 10px 16px;
+
+    background: var(--surface-alt);
+    color: var(--text);
+
+    font-weight: 700;
+}
+
+.secondary-button:hover {
+    background: var(--border);
+}
+
+/* Icon Buttons */
+
+.icon-button {
+    width: 40px;
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    color: var(--muted);
+
+    font-size: 18px;
+}
+
+.icon-button:hover {
+    background: var(--surface-alt);
+    color: #3a86ff;
+}
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.mobile-menu-button {
+    display: none;
+}
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .header-container {
+        min-height: 68px;
+    }
+
+    .main-navigation {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 20px;
+
+        background: var(--surface);
+
+        border: 1px solid var(--border);
+        border-radius: 12px;
+
+        box-shadow: var(--shadow);
+
+        z-index: 9999;
+    }
+
+    /* Show menu when React adds this class */
+
+    .main-navigation.mobile-menu-open {
+        display: flex;
+    }
+
+    .navigation-link {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    /* Mobile menu icon */
+
+    .mobile-menu-button {
+        display: inline-flex;
+    }
+
+    /*
+       Login and Sign Up remain visible
+       on mobile screens.
+    */
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .header-container {
+        width: 94%;
+    }
+
+    .brand-name {
+        font-size: 19px;
+    }
+
+    .header-actions {
+        gap: 5px;
+    }
+
+    .icon-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}
+
+.logged-in-user {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}

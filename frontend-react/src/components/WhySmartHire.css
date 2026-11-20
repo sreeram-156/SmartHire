@@ -1,0 +1,82 @@
+.why-smart-hire-section {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 75px 0;
+    background: var(--background);
+}
+
+.centered-heading {
+    display: block;
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 35px;
+}
+
+.why-smart-hire-section .section-label {
+    display: block;
+    margin-bottom: 7px;
+    color: #3a86ff;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+}
+
+.why-smart-hire-section .section-title {
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(27px, 4vw, 38px);
+    line-height: 1.15;
+}
+
+.why-smart-hire-section .section-description {
+    margin: 9px 0 0;
+    color: var(--muted);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.feature-card {
+    padding: 25px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+    border-color: #3a86ff;
+}
+
+.feature-icon {
+    font-size: 30px;
+}
+
+.feature-card h3 {
+    margin: 13px 0 7px;
+    color: var(--text);
+}
+
+.feature-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+@media (max-width: 1050px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,73 @@
+.notifications-section {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 75px 0;
+    background: var(--background);
+}
+
+.notifications-section .section-heading {
+    margin-bottom: 30px;
+}
+
+.notifications-section .section-label {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: #3a86ff;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.notifications-section .section-title {
+    margin: 0;
+    font-size: 32px;
+    color: var(--text);
+}
+
+.notifications-section .section-description {
+    margin: 9px 0 0;
+    color: var(--muted);
+}
+
+.notification-list {
+    display: grid;
+    gap: 10px;
+}
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    box-shadow: var(--shadow);
+}
+
+.notification-item strong {
+    color: var(--text);
+}
+
+.notification-item p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.notification-item small {
+    margin-left: auto;
+    color: #3a86ff;
+    font-weight: 800;
+}
+
+.notification-dot {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 auto;
+    margin-top: 6px;
+    border-radius: 50%;
+    background: #3a86ff;
+}
